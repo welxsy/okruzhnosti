@@ -1,5 +1,6 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QGraphicsView, QGraphicsScene, QVBoxLayout, QWidget
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QGraphicsView, QGraphicsScene, QVBoxLayout, QWidget,\
+    QGraphicsEllipseItem
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QColor
 from PyQt5 import uic
@@ -30,6 +31,10 @@ class MainWindow(QMainWindow):
     def create_random_circle(self):
         diameter = random.randint(20, 100)
         color = QColor(Qt.yellow)
+
+        circle = QGraphicsEllipseItem(0, 0, diameter, diameter)
+        circle.setBrush(color)
+        self.scene.addItem(circle)
 
 
 if __name__ == '__main__':
