@@ -1,7 +1,9 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QGraphicsView, QGraphicsScene, QVBoxLayout, QWidget
 from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QColor
 from PyQt5 import uic
+import random
 
 
 class MainWindow(QMainWindow):
@@ -24,6 +26,10 @@ class MainWindow(QMainWindow):
         central_widget = QWidget()
         central_widget.setLayout(layout)
         self.setCentralWidget(central_widget)
+
+    def create_random_circle(self):
+        diameter = random.randint(20, 100)
+        color = QColor(Qt.yellow)
 
 
 if __name__ == '__main__':
